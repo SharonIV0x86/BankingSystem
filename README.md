@@ -3,6 +3,9 @@ Just a banking system with login system.
 
   Took me very long to write all that code i know there are many problems in the code and it looks complex.
   But i will fix the code while working on other stuff too, and will also be learning and practising regularly.👍
+  
+  The human verification system used in this project is inspired from my other program
+  https://github.com/SharonIV0x86/SignUp
  
  # Working
  Even after working for a long time i was unable to fix the calculation issue with file input/output idk what to do
