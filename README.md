@@ -9,8 +9,7 @@ Just a banking system with login system.
  
  # Working
  Even after working for a long time i was unable to fix the calculation issue with file input/output idk what to do
- at this point, everything else is pretty fine and works well but the only thing i couldn't do very well was file IO
- but dont worry i will fix that too!
+ at this point, everything else is pretty fine and works well. 👍
  
  # How to use?
  The program will compile on both windows and Linux, tested platform(s) (Linux)
@@ -24,4 +23,4 @@ Just a banking system with login system.
 But remember trying to create more than one or more account is possible but the account balance and all will
 be the same no matter how many accounts you will create all will lead to one.
 And also there is no dedicated code to look for conflicting account credentials for example:
-two accounts can share one pin number, yes that is also another problemo.
+two accounts can share one pin number.
