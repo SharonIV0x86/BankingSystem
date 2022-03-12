@@ -5,7 +5,6 @@
 #include <cstdio>
 bool access = false;
 void clear_screen();
-// class BankingCalculations;
 
 std::ofstream write_out_to_file(".dont_delete.txt", std::ios::app); // FILE I/O basically making object for reading from the file
 std::ifstream read_from_the_file(".dont_delete.txt");
