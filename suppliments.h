@@ -1,7 +1,5 @@
 #include <iostream>
-#include <array>
 #include <fstream>
-#include <vector>
 #include <cstdio>
 bool access = false;
 void clear_screen();
