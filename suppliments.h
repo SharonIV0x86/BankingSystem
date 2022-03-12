@@ -5,12 +5,12 @@
 #include <cstdio>
 bool access = false;
 void clear_screen();
-class BankingCalculations;
+// class BankingCalculations;
 
 std::ofstream write_out_to_file(".dont_delete.txt", std::ios::app); // FILE I/O basically making object for reading from the file
 std::ifstream read_from_the_file(".dont_delete.txt");
 
-std::ifstream account_read_from_file(".account.txt"); 
+std::ifstream account_read_from_file(".account.txt");
 std::ofstream account_write_to_file(".account.txt", std::ios::app);
 
 class Login
@@ -25,27 +25,25 @@ protected:
     void login_to_your_account(void);
     void check_login_credentials(void);
     void check_for_empty_fields(std::string);
+
 public:
-    void exec_human_verification(std::string directioner) { human_verification(directioner); } // have to keep human vec function protected so using this function to execute that function ironically
-    void exec_creat_a_account() { create_a_account(); }                                        // will run create_a_account function as that is protected
-    void exec_check_login_credentials(void) { check_login_credentials(); }
+    // nothing exciting in public lol
 };
-class working_class : public virtual Login // Deriving working class virtually from the Login class to avoid ambguity
+class working_class : public Login // Deriving working class virtually from the Login class to avoid ambguity
 {
-protected:
+private:
     void Making_Choices();
 
 public:
     void exec_making_choices() { Making_Choices(); }
 };
 
-class BankingCalculations : public virtual working_class // Deriving Banking calculation from working class that is virtual so working class will have the public members of login class and so baking calculations will have
+class BankingCalculations : public working_class // Deriving Banking calculation from working class that is virtual so working class will have the public members of login class and so baking calculations will have
 {
 public:
     int depositing_array[15], withdrawing_array[15], IO_array[15];
     void Account(void);
     void Deposit_or_Withdraw_Money(void);
-    void delete_accounts();
     void get_to_know_something_cool();
     ~BankingCalculations()
     {
@@ -62,7 +60,6 @@ void BankingCalculations ::get_to_know_something_cool()
               << "\n\n\tStill there are some weak points in the code and it looks very complex" << std::endl
               << "\n\n\tand its also very unoptimized, yes i suck at coding swy :( lol" << std::endl
               << "\n\n\thttps://GitHub.com/SharonIV0X86";
-
 }
 
 BankingCalculations universal_object; // it is better for this main object to be here because this header file will be first provided to compiler and compiler will be known of this ojbect and i can use it all across
@@ -177,7 +174,7 @@ void Login ::human_verification(std::string secret = "none") // declaring the hu
     if (input.empty() || input != verify)
     {
         std::cout << "\n\n\tBAD_INPUT_ retry! the verification field cannot be empty!!" << std::endl;
-        universal_object.exec_human_verification("none");
+        human_verification("none");
     }
 
     clear_screen();
@@ -192,7 +189,7 @@ void Login ::human_verification(std::string secret = "none") // declaring the hu
     }
     if (secret == "login")
     {
-        exec_check_login_credentials();
+        check_login_credentials();
     }
 }
 
