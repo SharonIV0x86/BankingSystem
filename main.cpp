@@ -33,6 +33,7 @@ void working_class::Making_Choices()
     {
         clear_screen();
         universal_object.get_to_know_something_cool();
+        exit(EXIT_SUCCESS);
     }
     break;
 
