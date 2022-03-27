@@ -1,10 +1,7 @@
 #include <iostream>
 #include "suppliments.h"
-
-// working_class universal_object;
 void working_class::Making_Choices()
 {
-
     std::cout << "\n\n\tPress 1 to Create An Account: "
               << "\n\n\tPress 2 to Login in to current account: "
               << "\n\n\tPress 3 to exit happily :) and get to know something cool! "
