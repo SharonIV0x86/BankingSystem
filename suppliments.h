@@ -7,7 +7,6 @@ void check_counter()
 {
     static int cntr = -1;
     cntr++;
-    std::cout << "counter is: " << cntr;
     if (cntr > 3)
     {
         std::cout << "\n\n\tToo many wrong attempts! " << std::endl;
