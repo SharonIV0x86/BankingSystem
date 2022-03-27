@@ -139,7 +139,7 @@ void Login ::create_a_account()
     check_for_empty_fields(string_array[1]);
 
 re_enter_pin: // this goto right here if the pin lenght is above or below 4 characters the compiler will return user back here to enter pin again!
-
+    check_counter();
     std::cout << "\n\n\tEnter a PIN number of 4 characters: " << std::endl;
     std::cout << "\n\n\t~~~~~~> ";
     std::getline(std::cin, string_array[2]);
@@ -222,7 +222,7 @@ void Login::check_for_empty_fields(std::string field)
 {
     if (field.empty())
     {
-        std::cout << "this field cannot be empty father." << std::endl;
+        std::cout << "\n\n\tthis field cannot be empty father." << std::endl;
         exit(EXIT_FAILURE);
     }
 }
