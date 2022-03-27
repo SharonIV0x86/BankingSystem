@@ -1,16 +1,25 @@
 #include <iostream>
-#include <array>
 #include <fstream>
-#include <vector>
 #include <cstdio>
 bool access = false;
 void clear_screen();
+void check_counter()
+{
+    static int cntr = -1;
+    cntr++;
+    std::cout << "counter is: " << cntr;
+    if (cntr > 3)
+    {
+        std::cout << "\n\n\tToo many wrong attempts! " << std::endl;
+        exit(EXIT_FAILURE);
+    }
+}
 class BankingCalculations;
 
 std::ofstream write_out_to_file(".dont_delete.txt", std::ios::app); // FILE I/O basically making object for reading from the file
 std::ifstream read_from_the_file(".dont_delete.txt");
 
-std::ifstream account_read_from_file(".account.txt"); 
+std::ifstream account_read_from_file(".account.txt");
 std::ofstream account_write_to_file(".account.txt", std::ios::app);
 
 class Login
@@ -21,7 +30,7 @@ protected:
     std::string *string_array = new std::string[20];
     int *int_array = new int[200];
     std::string *dump_array = new std::string[100]; // index above 50 is for way too useless data hehe partition moment (gandhi moment)
-    std::string *login_check_array= new std::string[10];
+    std::string *login_check_array = new std::string[10];
     void login_to_your_account(void);
     void check_login_credentials(void);
     void check_for_empty_fields(std::string);
@@ -63,13 +72,13 @@ void BankingCalculations ::get_to_know_something_cool()
               << "\n\n\tStill there are some weak points in the code and it looks very complex" << std::endl
               << "\n\n\tand its also very unoptimized, yes i suck at coding swy :( lol" << std::endl
               << "\n\n\thttps://GitHub.com/SharonIV0X86";
-
 }
 
 BankingCalculations universal_object; // it is better for this main object to be here because this header file will be first provided to compiler and compiler will be known of this ojbect and i can use it all across
 // Login functions defined from suppliments.h line 45-137
 void Login ::check_login_credentials()
 {
+    check_counter();
     // clear_screen();
     std::cout << "\n\n\tEnter your name: " << std::endl;
     std::cout << "\n\n\t~~~~~> ";
@@ -119,6 +128,7 @@ void Login ::check_login_credentials()
         std::cout << "\n\n\tcredentials do not match! " << std::endl;
         std::cout << "\n\n\tpress any key to login again" << std::endl;
         std::cin.get();
+
         universal_object.exec_making_choices();
     }
 }
@@ -161,7 +171,7 @@ re_enter_pin: // this goto right here if the pin lenght is above or below 4 char
 }
 void Login ::human_verification(std::string secret = "none") // declaring the human_verification function of login class
 {
-
+    check_counter();
     std::string alphabets_uppercase = "ABCDEFGHIJKLMNOPQRS12345678abcdefghijklmnopqrstuvwxyz910TUVWXYZ";
     int random_number_for_string = (rand() % 58);
     int random_number = rand() % 9999;
