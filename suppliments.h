@@ -7,6 +7,7 @@ void check_counter()
 {
     static int cntr = -1;
     cntr++;
+    std::cout << "counter is: " << cntr;
     if (cntr > 3)
     {
         std::cout << "\n\n\tToo many wrong attempts! " << std::endl;
@@ -51,7 +52,6 @@ class BankingCalculations : public virtual working_class // Deriving Banking cal
 {
 public:
     int *depositing_array = new int[15], *withdrawing_array = new int[15], *IO_array = new int[15];
-    // int depositing_array[15], withdrawing_array[15], IO_array[15];
     void Account(void);
     void Deposit_or_Withdraw_Money(void);
     void delete_accounts();
